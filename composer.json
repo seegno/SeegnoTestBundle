@@ -1,0 +1,24 @@
+{
+    "name": "seegno/test-bundle",
+    "description": "SeegnoTestBundle",
+    "version": "0.0.1",
+    "keywords": ["bundle", "test", "seegno"],
+    "homepage": "https://github.com/seegno/test-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seegno",
+            "email": "projects@seegno.com",
+            "homepage": "http://seegno.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Seegno\\TestBundle\\": ""
+        }
+    },
+    "target-dir": "Seegno/TestBundle"
+}
