@@ -19,6 +19,5 @@
         "psr-4": {
             "Seegno\\TestBundle\\": ""
         }
-    },
-    "target-dir": "Seegno/TestBundle"
+    }
 }
