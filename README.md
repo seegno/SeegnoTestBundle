@@ -1,4 +1,7 @@
 # SeegnoTestBundle
+[![Latest Version](https://img.shields.io/packagist/v/seegno/test-bundle.svg)](https://packagist.org/packages/seegno/test-bundle)
+[![Build Status](https://travis-ci.org/seegno/test-bundle.svg?branch=master)](https://travis-ci.org/seegno/test-bundle)
+[![License](https://img.shields.io/packagist/l/seegno/test-bundle.svg)](https://packagist.org/packages/seegno/test-bundle)
 
 ## Introduction
 
