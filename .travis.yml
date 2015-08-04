@@ -13,3 +13,10 @@ before_script:
   - composer install --no-interaction
 
 script: ./vendor/bin/phpunit
+
+after_script:
+  - vendor/bin/test-reporter
+
+addons:
+  code_climate:
+    repo_token: 6c1f08dc8ed7582e20b050307209a2b2d0d3c1179ddf9c7ba929ca721eac01c3

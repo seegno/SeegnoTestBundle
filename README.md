@@ -1,7 +1,9 @@
 # SeegnoTestBundle
-[![Latest Version](https://img.shields.io/packagist/v/seegno/test-bundle.svg)](https://packagist.org/packages/seegno/test-bundle)
-[![Build Status](https://travis-ci.org/seegno/test-bundle.svg?branch=master)](https://travis-ci.org/seegno/test-bundle)
-[![License](https://img.shields.io/packagist/l/seegno/test-bundle.svg)](https://packagist.org/packages/seegno/test-bundle)
+[![Latest Version][packagist-image]][packagist-url]
+[![Build Status][travis-image]][travis-url]
+[![Code Climate][codeclimate-gpa-image]][codeclimate-url]
+[![Test Coverage][codeclimate-coverage-image]][codeclimate-url]
+[![License][license-image]][packagist-url]
 
 ## Introduction
 
@@ -11,7 +13,7 @@ This Bundle provides base classes for unit and integration tests in order to ass
 
 #### 1. Download SeegnoTestBundle using composer
 
-Add SeegnoTestBundle by running the command:
+Install SeegnoTestBundle by running the command:
 
 ``` bash
 $ composer require --dev seegno/test-bundle
@@ -65,6 +67,13 @@ class SomeClassTest extends BaseTestCase
 }
 ```
 
+#### Available features:
+
+```php
+$this->getFaker(); // Get a faker instance.
+$this->setReflectionProperty($class, $propertyName, $propertyValue); // Set a class property using reflection.
+```
+
 #### Integration tests
 
 ```php
@@ -76,6 +85,15 @@ class SomeClassTest extends IntegrationTestCase
 }
 ```
 
+#### Available features:
+
+```php
+$this->getContainer(); // Get an instance of the dependency injection container.
+$this->getSession(); // Get session.
+$this->get('SERVICE'); // Get services.
+$this->initializeDatabase(); // Initialize test database (SQL or MongoDB).
+```
+
 #### Web tests
 
 ```php
@@ -85,6 +103,14 @@ class SomeClassTest extends WebTestCase
 {
     //...
 }
+```
+
+#### Available features:
+
+```php
+$this->authenticateUser($client, $user, $credentials, $roles, $firewall); // Authenticate a user.
+$this->getClient(); // Get client that simulates a browser and makes requests to a Kernel object.
+$this->assertResponseFields($response, $object, $groups); // Assert that object properties keys are in the response.
 ```
 
 ## Run tests
@@ -102,3 +128,12 @@ To run the tests on your local machine, just use the phpunit command:
 ```sh
 phpunit
 ```
+
+[codeclimate-coverage-image]: https://codeclimate.com/github/seegno/SeegnoTestBundle/badges/coverage.svg
+[codeclimate-gpa-image]: https://codeclimate.com/github/seegno/SeegnoTestBundle/badges/gpa.svg
+[codeclimate-url]: https://codeclimate.com/github/seegno/SeegnoTestBundle
+[license-image]: https://img.shields.io/packagist/l/seegno/test-bundle.svg
+[packagist-image]: https://img.shields.io/packagist/v/seegno/test-bundle.svg
+[packagist-url]: https://packagist.org/packages/seegno/test-bundle
+[travis-image]: https://travis-ci.org/seegno/SeegnoTestBundle.svg
+[travis-url]: https://travis-ci.org/seegno/SeegnoTestBundle
