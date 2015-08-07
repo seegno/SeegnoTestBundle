@@ -132,8 +132,8 @@ phpunit
 [codeclimate-coverage-image]: https://codeclimate.com/github/seegno/SeegnoTestBundle/badges/coverage.svg
 [codeclimate-gpa-image]: https://codeclimate.com/github/seegno/SeegnoTestBundle/badges/gpa.svg
 [codeclimate-url]: https://codeclimate.com/github/seegno/SeegnoTestBundle
-[license-image]: https://img.shields.io/packagist/l/seegno/test-bundle.svg
-[packagist-image]: https://img.shields.io/packagist/v/seegno/test-bundle.svg
+[license-image]: https://poser.pugx.org/seegno/test-bundle/license
+[packagist-image]: https://poser.pugx.org/seegno/test-bundle/v/stable
 [packagist-url]: https://packagist.org/packages/seegno/test-bundle
 [travis-image]: https://travis-ci.org/seegno/SeegnoTestBundle.svg
 [travis-url]: https://travis-ci.org/seegno/SeegnoTestBundle
