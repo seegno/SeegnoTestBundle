@@ -14,9 +14,9 @@ use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 class WebTestCaseTest extends BaseTestCase
 {
     /**
-     * SetUp.
+     * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 

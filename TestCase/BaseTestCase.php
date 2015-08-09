@@ -16,7 +16,7 @@ class BaseTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp()
     {
         $this->faker = FakerFactory::create();
 

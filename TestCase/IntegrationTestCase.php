@@ -15,7 +15,7 @@ class IntegrationTestCase extends BaseTestCase
     /**
      * {@inheritdoc}
      */
-    public function setUp()
+    protected function setUp()
     {
         $this->boot();
         $this->initializeDatabase();
