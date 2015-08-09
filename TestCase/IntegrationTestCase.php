@@ -26,7 +26,7 @@ class IntegrationTestCase extends BaseTestCase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    protected function tearDown()
     {
         self::$kernel->shutdown();
 

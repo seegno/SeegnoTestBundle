@@ -26,7 +26,7 @@ class BaseTestCase extends WebTestCase
     /**
      * {@inheritdoc}
      */
-    public function tearDown()
+    protected function tearDown()
     {
         $this->faker = null;
 
