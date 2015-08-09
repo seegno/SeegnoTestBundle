@@ -42,16 +42,6 @@ class BaseTestCase extends WebTestCase
     }
 
     /**
-     * Set a class property using reflection.
-     */
-    protected function setReflectionProperty($class, $propertyName, $propertyValue)
-    {
-        $reflector = new ReflectionProperty(get_class($class), $propertyName);
-        $reflector->setAccessible(true);
-        $reflector->setValue($class, $propertyValue);
-    }
-
-    /**
      * Get class mock.
      */
     protected function getClassMock($class, array $methods = null)
@@ -62,5 +52,15 @@ class BaseTestCase extends WebTestCase
             ->setMethods($methods)
             ->getMock()
         ;
+    }
+
+    /**
+     * Set a class property using reflection.
+     */
+    protected function setReflectionProperty($class, $propertyName, $propertyValue)
+    {
+        $reflector = new ReflectionProperty(get_class($class), $propertyName);
+        $reflector->setAccessible(true);
+        $reflector->setValue($class, $propertyValue);
     }
 }

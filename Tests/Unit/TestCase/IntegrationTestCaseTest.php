@@ -154,14 +154,6 @@ class IntegrationTestCaseTest extends BaseTestCase
     }
 
     /**
-     * Get `IntegrationTestCase` mock.
-     */
-    protected function getTestCaseMock(array $methods = null)
-    {
-        return $this->getClassMock('Seegno\TestBundle\TestCase\IntegrationTestCase', $methods);
-    }
-
-    /**
      * Get `DocumentManager` mock.
      */
     protected function getDocumentManagerMock(array $methods = null)
@@ -175,5 +167,13 @@ class IntegrationTestCaseTest extends BaseTestCase
     protected function getMongoDBConfigurationMock(array $methods = null)
     {
         return $this->getClassMock('Doctrine\ODM\MongoDB\Configuration', $methods);
+    }
+
+    /**
+     * Get `TestCase` mock.
+     */
+    protected function getTestCaseMock(array $methods = null)
+    {
+        return $this->getClassMock('Seegno\TestBundle\TestCase\IntegrationTestCase', $methods);
     }
 }
