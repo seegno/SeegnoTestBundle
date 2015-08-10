@@ -26,5 +26,6 @@
         "psr-4": {
             "Seegno\\TestBundle\\": ""
         }
-    }
+    },
+    "prefer-stable": true
 }
