@@ -125,6 +125,14 @@ class WebTestCaseTest extends BaseTestCase
     }
 
     /**
+     * Get `AppKernel` mock.
+     */
+    protected function getAppKernelMock(array $methods = null)
+    {
+        return $this->getClassMock('Bundle\FrameworkBundle\Tests\Functional\app\AppKernel', $methods);
+    }
+
+    /**
      * Get `Client` mock.
      */
     protected function getClientMock(array $methods = null)
@@ -149,14 +157,6 @@ class WebTestCaseTest extends BaseTestCase
     }
 
     /**
-     * Get `Session` mock.
-     */
-    protected function getSessionMock(array $methods = null)
-    {
-        return $this->getClassMock('Symfony\Component\HttpFoundation\Session\Session', $methods);
-    }
-
-    /**
      * Get `SecurityContext` mock.
      */
     protected function getSecurityContextMock(array $methods = null)
@@ -165,18 +165,18 @@ class WebTestCaseTest extends BaseTestCase
     }
 
     /**
+     * Get `Session` mock.
+     */
+    protected function getSessionMock(array $methods = null)
+    {
+        return $this->getClassMock('Symfony\Component\HttpFoundation\Session\Session', $methods);
+    }
+
+    /**
      * Get `WebTestCase` mock.
      */
     protected function getWebTestCaseMock(array $methods = null)
     {
         return $this->getClassMock('Seegno\TestBundle\TestCase\WebTestCase', $methods);
-    }
-
-    /**
-     * Get `AppKernel` mock.
-     */
-    protected function getAppKernelMock(array $methods = null)
-    {
-        return $this->getClassMock('Bundle\FrameworkBundle\Tests\Functional\app\AppKernel', $methods);
     }
 }
