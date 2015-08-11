@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader;
 class SeegnoTestExtension extends Extension
 {
     /**
-     * Load.
+     * {inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {

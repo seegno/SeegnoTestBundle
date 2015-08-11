@@ -9,7 +9,7 @@ use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
- * WebTestCase for web tests.
+ * TestCase for web tests.
  */
 class WebTestCase extends IntegrationTestCase
 {
