@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class BaseTestCase extends WebTestCase
 {
-    protected $faker;
+    private $faker;
 
     /**
      * {@inheritdoc}
