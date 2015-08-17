@@ -67,7 +67,7 @@ class SomeClassTest extends BaseTestCase
 }
 ```
 
-#### Available features:
+Available features:
 
 ```php
 $this->getFaker(); // Get a faker instance.
@@ -85,7 +85,7 @@ class SomeClassTest extends IntegrationTestCase
 }
 ```
 
-#### Available features:
+Available features:
 
 ```php
 $this->getContainer(); // Get an instance of the dependency injection container.
@@ -105,7 +105,7 @@ class SomeClassTest extends WebTestCase
 }
 ```
 
-#### Available features:
+Available features:
 
 ```php
 $this->authenticateUser($client, $user, $credentials, $roles, $firewall); // Authenticate a user.
