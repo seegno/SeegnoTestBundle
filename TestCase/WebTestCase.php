@@ -38,8 +38,8 @@ class WebTestCase extends IntegrationTestCase
      */
     public function authenticateUser(Client $client, $user, $credentials, array $roles = array(), $firewall = null)
     {
-        $securityContext = $this->get('security.context');
-        $firewall = $firewall ?: $securityContext->getToken()->getProviderKey();
+        $tokenStorage = $this->get('security.token_storage');
+        $firewall = $firewall ?: $tokenStorage->getToken()->getProviderKey();
 
         $client->getCookieJar()->set(new Cookie(session_name(), true));
 
@@ -47,7 +47,7 @@ class WebTestCase extends IntegrationTestCase
         $client->request('GET', '/');
 
         $token = new UsernamePasswordToken($user, $credentials, $firewall, $roles);
-        $securityContext->setToken($token);
+        $tokenStorage->setToken($token);
 
         $session = $client->getContainer()->get('session');
         $session->set(sprintf('_security_%s', $firewall), serialize($token));
