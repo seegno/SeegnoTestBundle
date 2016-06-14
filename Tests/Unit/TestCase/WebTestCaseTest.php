@@ -30,7 +30,7 @@ class WebTestCaseTest extends BaseTestCase
         $this->container = $this->getContainerMock(array('get'));
         $this->container->method('get')->with('session')->willReturn($this->session);
 
-        $this->securityContext = $this->getSecurityContextMock(array());
+        $this->tokenStorage = $this->getTokenStorageMock(array());
 
         $this->client = $this->getClientMock(array());
         $this->client->method('getContainer')->willReturn($this->container);
@@ -50,7 +50,7 @@ class WebTestCaseTest extends BaseTestCase
         $client->expects($this->once())->method('getCookieJar')->willReturn($cookieJar);
 
         $testCase = $this->getWebTestCaseMock(array('get'));
-        $testCase->method('get')->with('security.context')->willReturn($this->securityContext);
+        $testCase->method('get')->with('security.token_storage')->willReturn($this->tokenStorage);
 
         $testCase->authenticateUser($client, $this->user, $this->credentials, $this->roles, $this->firewall);
     }
@@ -63,7 +63,7 @@ class WebTestCaseTest extends BaseTestCase
         $this->client->expects($this->once())->method('request') ->with('GET', '/');
 
         $testCase = $this->getWebTestCaseMock(array('get'));
-        $testCase->method('get')->with('security.context')->willReturn($this->securityContext);
+        $testCase->method('get')->with('security.token_storage')->willReturn($this->tokenStorage);
 
         $testCase->authenticateUser($this->client, $this->user, $this->credentials, $this->roles, $this->firewall);
     }
@@ -75,16 +75,16 @@ class WebTestCaseTest extends BaseTestCase
     {
         $token = new UsernamePasswordToken($this->user, $this->credentials, $this->firewall, $this->roles);
 
-        $this->securityContext->expects($this->once())->method('setToken')->with($token);
+        $this->tokenStorage->expects($this->once())->method('setToken')->with($token);
 
         $testCase = $this->getWebTestCaseMock(array('get'));
-        $testCase->method('get')->with('security.context')->willReturn($this->securityContext);
+        $testCase->method('get')->with('security.token_storage')->willReturn($this->tokenStorage);
 
         $testCase->authenticateUser($this->client, $this->user, $this->credentials, $this->roles, $this->firewall);
     }
 
     /**
-     * Should call `session.set` with the `security.context` token provider key if none is provided.
+     * Should call `session.set` with the `security.token_storage` token provider key if none is provided.
      */
     public function testAuthenticateUserIfNoFirewallIsProvided()
     {
@@ -99,12 +99,12 @@ class WebTestCaseTest extends BaseTestCase
 
         $securityContextToken->expects($this->once())->method('getProviderKey')->willReturn($this->firewall);
 
-        $this->securityContext->expects($this->once())->method('getToken')->willReturn($securityContextToken);
+        $this->tokenStorage->expects($this->once())->method('getToken')->willReturn($securityContextToken);
 
         $this->session->expects($this->once())->method('set')->with('_security_qux', serialize($token));
 
         $testCase = $this->getWebTestCaseMock(array('get'));
-        $testCase->method('get')->with('security.context')->willReturn($this->securityContext);
+        $testCase->method('get')->with('security.token_storage')->willReturn($this->tokenStorage);
 
         $testCase->authenticateUser($this->client, $this->user, $this->credentials, $this->roles);
     }
@@ -119,7 +119,7 @@ class WebTestCaseTest extends BaseTestCase
         $this->session->expects($this->once())->method('set')->with('_security_qux', serialize($token));
 
         $testCase = $this->getWebTestCaseMock(array('get'));
-        $testCase->method('get')->with('security.context')->willReturn($this->securityContext);
+        $testCase->method('get')->with('security.token_storage')->willReturn($this->tokenStorage);
 
         $testCase->authenticateUser($this->client, $this->user, $this->credentials, $this->roles, $this->firewall);
     }
@@ -159,9 +159,9 @@ class WebTestCaseTest extends BaseTestCase
     /**
      * Get `SecurityContext` mock.
      */
-    protected function getSecurityContextMock(array $methods = null)
+    protected function getTokenStorageMock(array $methods = null)
     {
-        return $this->getClassMock('Symfony\Component\Security\Core\SecurityContext', $methods);
+        return $this->getClassMock('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage', $methods);
     }
 
     /**
