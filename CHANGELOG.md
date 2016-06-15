@@ -1,7 +1,14 @@
 # Changelog
 
-## [1.0.0](https://github.com/seegno/SeegnoTestBundle/tree/1.0.0)
+## [2.0.0](https://github.com/seegno/SeegnoTestBundle/tree/2.0.0)
 
+[Full Changelog](https://github.com/seegno/SeegnoTestBundle/compare/1.0.0...2.0.0)
+
+**Merged pull requests:**
+
+- Add Symfony 3 support [\#15](https://github.com/seegno/SeegnoTestBundle/pull/15) ([joaonice](https://github.com/joaonice))
+
+## [1.0.0](https://github.com/seegno/SeegnoTestBundle/tree/1.0.0) (2016-06-14)
 [Full Changelog](https://github.com/seegno/SeegnoTestBundle/compare/0.0.3...1.0.0)
 
 **Merged pull requests:**

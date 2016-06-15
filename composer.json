@@ -1,7 +1,7 @@
 {
     "name": "seegno/test-bundle",
     "description": "SeegnoTestBundle",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "keywords": ["bundle", "test", "seegno"],
     "homepage": "https://github.com/seegno/test-bundle",
     "license": "MIT",
