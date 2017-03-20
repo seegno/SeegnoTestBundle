@@ -1,7 +1,15 @@
 # Changelog
 
-## [2.0.0](https://github.com/seegno/SeegnoTestBundle/tree/2.0.0)
+## [2.0.1](https://github.com/seegno/SeegnoTestBundle/tree/2.0.1)
 
+[Full Changelog](https://github.com/seegno/SeegnoTestBundle/compare/2.0.0...2.0.1)
+
+**Merged pull requests:**
+
+- Update faker composer version [\#17](https://github.com/seegno/SeegnoTestBundle/pull/17) ([joaonice](https://github.com/joaonice))
+- Update code climate encrypted repo token [\#16](https://github.com/seegno/SeegnoTestBundle/pull/16) ([nunorafaelrocha](https://github.com/nunorafaelrocha))
+
+## [2.0.0](https://github.com/seegno/SeegnoTestBundle/tree/2.0.0) (2016-06-15)
 [Full Changelog](https://github.com/seegno/SeegnoTestBundle/compare/1.0.0...2.0.0)
 
 **Merged pull requests:**
