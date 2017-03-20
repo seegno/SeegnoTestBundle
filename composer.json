@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.5",
         "doctrine/doctrine-fixtures-bundle": "~2.2",
-        "fzaninotto/faker": "1.5.*",
+        "fzaninotto/faker": ">=1.5",
         "phpunit/phpunit": "~4.5",
         "symfony/symfony": ">=2.7"
     },
